@@ -1,0 +1,19 @@
+{
+  "name": "psl-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start": "concurrently \"yarn workspace backend start\" \"yarn workspace psl-customer start\" \"yarn workspace psl-driver start\"",
+    "start:backend": "yarn workspace backend start",
+    "start:psl-customer": "yarn workspace psl-customer start",
+    "start:psl-driver": "yarn workspace psl-driver start"
+  },
+  "devDependencies": {
+    "lerna": "^8.1.8"
+  }
+}
